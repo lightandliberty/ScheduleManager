@@ -62,7 +62,10 @@
     <Reference Include="DevExpress.XtraScheduler.v22.1.Core, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v22.1.Core.Desktop, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v22.1.Extensions, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="System" />
+    <Reference Include="DevExpress.XtraTreeList.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GantViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GantViewForm.Designer.cs">
+      <DependentUpon>GantViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,12 +103,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>scDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="scGantDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>scGantDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Scheduler.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Scheduler.Designer.cs">
       <DependentUpon>Scheduler.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GantViewForm.resx">
+      <DependentUpon>GantViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +166,17 @@
     <None Include="scDBDataSet.xss">
       <DependentUpon>scDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="scGantDBDataSet.xsc">
+      <DependentUpon>scGantDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="scGantDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>scGantDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="scGantDBDataSet.xss">
+      <DependentUpon>scGantDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -166,12 +194,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="scDB.mdf" />
     <Content Include="scDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>scDB.mdf</DependentUpon>
+    </Content>
+    <None Include="scGantDB.mdf" />
+    <Content Include="scGantDB_log.ldf">
+      <DependentUpon>scGantDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

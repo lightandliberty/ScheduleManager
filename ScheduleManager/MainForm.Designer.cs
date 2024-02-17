@@ -30,13 +30,15 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.스케줄러ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.간트뷰ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.스케줄러ToolStripMenuItem});
+            this.스케줄러ToolStripMenuItem,
+            this.간트뷰ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
@@ -49,6 +51,13 @@
             this.스케줄러ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.스케줄러ToolStripMenuItem.Text = "스케줄러";
             this.스케줄러ToolStripMenuItem.Click += new System.EventHandler(this.스케줄러ToolStripMenuItem_Click);
+            // 
+            // 간트뷰ToolStripMenuItem
+            // 
+            this.간트뷰ToolStripMenuItem.Name = "간트뷰ToolStripMenuItem";
+            this.간트뷰ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.간트뷰ToolStripMenuItem.Text = "간트 뷰";
+            this.간트뷰ToolStripMenuItem.Click += new System.EventHandler(this.간트뷰ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -71,6 +80,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 스케줄러ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 간트뷰ToolStripMenuItem;
     }
 }
 

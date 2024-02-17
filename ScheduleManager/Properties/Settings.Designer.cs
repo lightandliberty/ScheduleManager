@@ -33,5 +33,16 @@ namespace ScheduleManager.Properties {
                 return ((string)(this["scDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\scGantDB.mdf;" +
+            "Integrated Security=True;Connect Timeout=30")]
+        public string scGantDBConnectionString {
+            get {
+                return ((string)(this["scGantDBConnectionString"]));
+            }
+        }
     }
 }

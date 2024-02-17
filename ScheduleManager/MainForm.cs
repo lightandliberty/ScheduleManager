@@ -24,6 +24,7 @@ namespace ScheduleManager
         }
 
         private Scheduler sc;
+        private GantViewForm gv;
 
         private void ShowSchedule()
         {
@@ -38,5 +39,18 @@ namespace ScheduleManager
                 sc.Focus();
         }
 
+        private void 간트뷰ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gv == null || gv.IsDisposed)
+            {
+                gv = new GantViewForm();
+                gv.MdiParent = this;
+                gv.FormClosing += (s, ea) => { this.Focus(); gv.Dispose(); gv = null; };
+                gv.Show();
+            }
+            else
+                gv.Focus();
+
+        }
     }
 }

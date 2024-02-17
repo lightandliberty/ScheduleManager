@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.openScheduleItem1 = new DevExpress.XtraScheduler.UI.OpenScheduleItem();
             this.saveScheduleItem1 = new DevExpress.XtraScheduler.UI.SaveScheduleItem();
@@ -190,29 +190,35 @@
             this.repositoryItemDuration1});
             this.ribbon.Size = new System.Drawing.Size(1178, 160);
             this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // openScheduleItem1
             // 
+            this.openScheduleItem1.Caption = "가져오기";
             this.openScheduleItem1.Id = 1;
             this.openScheduleItem1.Name = "openScheduleItem1";
             // 
             // saveScheduleItem1
             // 
+            this.saveScheduleItem1.Caption = "저장";
             this.saveScheduleItem1.Id = 2;
             this.saveScheduleItem1.Name = "saveScheduleItem1";
             // 
             // printPreviewItem1
             // 
+            this.printPreviewItem1.Caption = "인쇄\r\n&미리보기";
             this.printPreviewItem1.Id = 3;
             this.printPreviewItem1.Name = "printPreviewItem1";
             // 
             // printItem1
             // 
+            this.printItem1.Caption = "빠른 인쇄";
             this.printItem1.Id = 4;
             this.printItem1.Name = "printItem1";
             // 
             // printPageSetupItem1
             // 
+            this.printPageSetupItem1.Caption = "페이지 &설정\r\n";
             this.printPageSetupItem1.Id = 5;
             this.printPageSetupItem1.Name = "printPageSetupItem1";
             // 
@@ -460,11 +466,11 @@
             this.schedulerControl1.Start = new System.DateTime(2024, 2, 15, 0, 0, 0, 0);
             this.schedulerControl1.TabIndex = 3;
             this.schedulerControl1.Text = "schedulerControl1";
-            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler4);
+            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl1.Views.FullWeekView.Enabled = true;
-            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler5);
+            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl1.Views.WeekView.Enabled = false;
-            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
+            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.schedulerControl1.Views.YearView.UseOptimizedScrolling = false;
             this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing);
             // 
@@ -570,6 +576,7 @@
             this.commonRibbonPageGroup1.ItemLinks.Add(this.openScheduleItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.saveScheduleItem1);
             this.commonRibbonPageGroup1.Name = "commonRibbonPageGroup1";
+            this.commonRibbonPageGroup1.Text = "공통";
             // 
             // printRibbonPageGroup1
             // 
@@ -578,6 +585,7 @@
             this.printRibbonPageGroup1.ItemLinks.Add(this.printItem1);
             this.printRibbonPageGroup1.ItemLinks.Add(this.printPageSetupItem1);
             this.printRibbonPageGroup1.Name = "printRibbonPageGroup1";
+            this.printRibbonPageGroup1.Text = "인쇄";
             // 
             // homeRibbonPage1
             // 
@@ -710,7 +718,7 @@
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(233, 200);
             this.dockPanel1.Size = new System.Drawing.Size(233, 485);
-            this.dockPanel1.Text = "dockPanel1";
+            this.dockPanel1.Text = "표시 날짜 선택";
             // 
             // dockPanel1_Container
             // 
@@ -726,7 +734,9 @@
             this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNavigator1.DateTime = new System.DateTime(2024, 2, 15, 0, 0, 0, 0);
             this.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateNavigator1.EditValue = new System.DateTime(2024, 2, 15, 0, 0, 0, 0);
             this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator1.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator1.Name = "dateNavigator1";
@@ -802,6 +812,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Scheduler";
             this.Load += new System.EventHandler(this.Scheduler_Load);
+            this.Shown += new System.EventHandler(this.Scheduler_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).EndInit();
